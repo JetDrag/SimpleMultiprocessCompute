@@ -214,8 +214,6 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-.idea/.name
-.idea/misc.xml
-*.xml
-.idea/SimpleMultiprocessCompute.iml
+
 test.py
+result
