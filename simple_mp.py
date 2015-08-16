@@ -12,8 +12,12 @@ def result_worker(queue,con2):
         if queue.empty() and tag != 0:
             break
         if not queue.empty():
-            level_path = queue.get()
-            fhw.writelines(level_path + '\n')
+            result = unicode(queue.get())
+            fhw.writelines(result + '\n')
+
+def start_with_return_func(queue,func,item):
+        result = func(item)
+        queue.put(result)
 
 
 class SimpleMP(object):
@@ -31,13 +35,14 @@ class SimpleMP(object):
 
     def start_with_return(self):
         pool = multiprocessing.Pool()
-        queue = multiprocessing.Manager().queue()
+        queue = multiprocessing.Manager().Queue()
         con1,con2 = multiprocessing.Pipe()
 
-        p1 = multiprocessing.Process(result_worker,(queue,con2))
+        p1 = multiprocessing.Process(target = result_worker,args = (queue,con2))
+        p1.start()
 
         for item in self.task_lst:
-            pool.apply_async(self.def_run,[queue,item])
+            pool.apply_async(start_with_return_func,[queue,self.def_run,item])
         pool.close()
         pool.join()
 
