@@ -1,5 +1,5 @@
 # coding=utf8
-__author__ = 'wangjunhao<wangjunhao@conew.com>'
+__author__ = 'Wang<taptube@gmail.com>'
 
 class const:
     class ConstError(TypeError): pass
