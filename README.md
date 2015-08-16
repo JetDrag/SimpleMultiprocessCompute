@@ -9,9 +9,9 @@ Def your founction as the first class, put your task into a list, then, here is 
 
 from simple_mp import SimpleMP
 
-  task_lst = [1,2,3]
+	task_lst = [1,2,3]
   
-  def a(per_num):
+	def a(per_num):
       return per_num + 1
   
   if __name__ == '__main__':
