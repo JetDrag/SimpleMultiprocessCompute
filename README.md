@@ -1,5 +1,5 @@
 # SimpleMultiprocessCompute
-Simple multiprocess compute for Python ,get the benifit of multi core
+Simple multiprocess compute for Python ,get the benefit of multi core
 
 ## How to use
 Make sure the simple_mp module is below if __name__ == '__main__' on Windows
