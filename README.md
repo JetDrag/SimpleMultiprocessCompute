@@ -6,8 +6,7 @@ Make sure the simple_mp module is below if __name__ == '__main__' on Windows
 Def your founction as the first class, put your task into a list, then, here is an example
 
 - Example:
-<pre><code>
-from simple_mp import SimpleMP
+<pre><code>from simple_mp import SimpleMP
 	task_lst = [1,2,3]
 	
 	def a(per_num):
